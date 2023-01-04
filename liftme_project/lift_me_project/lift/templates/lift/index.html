@@ -1,0 +1,38 @@
+{% extends 'lift/base.html' %}
+<div>
+    {%block content %}
+    <table class="table mb-2 " id="main-rows">
+        <thead >
+          <tr >
+            <th scope="col">username</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">from</th>
+            <th scope="col">to</th>
+            <th scope="col"># travellers</th>
+            <th scope="col">date time</th>
+            <th scope="col">Bags</th>
+            <th scope="col">kms</th>
+            <th scope="col">Payment</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for lift in lifts %}
+          <tr >
+            <td>{{ lift.username}}</td>
+            <td>{{ lift.first_name }}</td>
+            <td>{{ lift.last_name }} </td>
+            <td>{{ lift.from_location}} </td>
+            <td>{{ lift.to_location}} </td>
+            <td>{{ lift.leaving_with}} </td>
+            <td>{{ lift.date_time_of_leaving }} </td>
+            <td>{{ lift.number_of_bags }} </td>
+            <td>{{lift.estimated_kms}}</td>
+            <td>{{lift.willing_to_pay}}</td>
+           
+        </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}
